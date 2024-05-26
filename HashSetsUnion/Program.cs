@@ -22,17 +22,25 @@ foreach (var item in oD)
 {
     Console.WriteLine((item));
 }
+
 HashSet<string> hashSet = new HashSet<string>() { "a", "b", "c" };
 Console.WriteLine("Values in the hash set are: ");
 foreach (var hash in hashSet)
 {
     Console.WriteLine(hash);
 }
-HashSet<string> hashSet2 = new HashSet<string>(new HashSet<string>() { "a","b","c"});
-List<int> intListesi = new List<int>();
+
+HashSet<string> hashSet2 = new HashSet<string>(new HashSet<string>() { "a", "b", "c" });
+
 IntComparer intComparer = new();
-Dictionary<int,int> intDictionary = new Dictionary<int, int>(intComparer) { [10] = 10, [0] = 0, [1] = 1, [3] = 3,
-                                                                [2] = 2 };
+Dictionary<int, int> intDictionary = new Dictionary<int, int>(intComparer)
+{
+    [10] = 10,
+    [0] = 0,
+    [1] = 1,
+    [3] = 3,
+    [2] = 2
+};
 
 Console.WriteLine("Keys in the dictonary.");
 foreach (var keyValuePair in intDictionary)
@@ -40,6 +48,9 @@ foreach (var keyValuePair in intDictionary)
     Console.WriteLine(keyValuePair.Key);
 }
 
+// This is how to filter values in a list.
+List<int> intListesi = new List<int>();
+List<int> distinctList = new HashSet<int>(intListesi).ToList();
 
 TDemo(4);
 Console.WriteLine(TDemo("ere"));
